@@ -21,7 +21,7 @@ public class YandexMarketTest {
 
         Configuration.startMaximized = true;
         Configuration.screenshots = true;
-
+        open("https://yandex.ru/");
     }
 
 
@@ -29,7 +29,7 @@ public class YandexMarketTest {
     @Test
     public void userCanSearchWithYandexMarket() {
 
-        open("https://yandex.ru/");
+
         $(By.linkText("Маркет")).click();
         switchTo().window(1);
         element("#header-search").setValue("ноутбук xiaomi redmibook");
@@ -38,7 +38,7 @@ public class YandexMarketTest {
         element("._3wPGpzKmmn").shouldHave(text("Ноутбуки"));
         element(".LhMupC0dLR ").click();
         screenshot("C\\Users\\Ruslan\\Downloads\\aqa-code-aqa4\\aqa-code-aqa4\\web");
-        closeWindow();
+
 
 
     }
@@ -46,7 +46,7 @@ public class YandexMarketTest {
     @Test
     public void userCanSearchWithYandexMarketByXPath() {
 
-        open("https://yandex.ru/");
+
         element(By.xpath("//div[@class='services-new__list']/a[5]/div[@class='services-new__icon']")).click();
         switchTo().window(1);
         element(By.xpath("//input[@id='header-search']")).setValue("ноутбук xiaomi redmibook");
@@ -55,7 +55,6 @@ public class YandexMarketTest {
         element(By.xpath("//h1[@class='_3wPGpzKmmn']")).shouldHave(text("Ноутбуки"));
         element(By.xpath("//div[@class='LhMupC0dLR _8oEFsr-0y5']")).click();
         screenshot("C\\Users\\Ruslan\\Downloads\\aqa-code-aqa4\\aqa-code-aqa4\\web");
-        closeWindow();
     }
 
 }
