@@ -35,23 +35,23 @@ public class YandexMarketTest {
         element(Selectors.byText("Покупки на Маркете")).should(exist);
         element("._3wPGpzKmmn").shouldHave(text("Ноутбуки"));
         element(".LhMupC0dLR ").click();
-//        screenshot("C\\Users\\Ruslan\\Downloads\\aqa-code-aqa4\\aqa-code-aqa4\\web");
+        screenshot("C\\Users\\Ruslan\\Downloads\\aqa-code-aqa4\\aqa-code-aqa4\\web");
 
     }
 
-//    @Test
-//    public void userCanSearchWithYandexMarketXPath() {
-//
-//        open("https://yandex.ru/");
-//        $(By.linkText("Маркет")).click();
-//        switchTo().window(1);
-//        element("[id='header-search']").setValue("ноутбук xiaomi redmibook");
-//        element("._1XiEJDPVpk").click();
-//        element(Selectors.byText("Покупки на Маркете")).should(exist);
-//        element("._3wPGpzKmmn").shouldHave(text("Ноутбуки"));
-//        element(".LhMupC0dLR ").click();
-////        screenshot("C\\Users\\Ruslan\\Downloads\\aqa-code-aqa4\\aqa-code-aqa4\\web");
+    @Test
+    public void userCanSearchWithYandexMarketByXPath() {
 
-//    }
+        open("https://yandex.ru/");
+        element(By.xpath("//div[@class='services-new__list']/a[5]/div[@class='services-new__icon']")).click();
+        switchTo().window(1);
+        element(By.xpath("//input[@id='header-search']")).setValue("ноутбук xiaomi redmibook");
+        element(By.xpath("//button[@class='_1XiEJDPVpk']")).click();
+        element(Selectors.byText("Покупки на Маркете")).should(exist);
+        element(By.xpath("//h1[@class='_3wPGpzKmmn']")).shouldHave(text("Ноутбуки"));
+        element(By.xpath("//div[@class='LhMupC0dLR _8oEFsr-0y5']")).click();
+        screenshot("C\\Users\\Ruslan\\Downloads\\aqa-code-aqa4\\aqa-code-aqa4\\web");
+
+    }
 
 }
