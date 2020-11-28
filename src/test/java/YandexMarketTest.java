@@ -1,7 +1,7 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.junit5.ScreenShooterExtension;
-import org.junit.jupiter.api.AfterEach;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -38,7 +38,7 @@ public class YandexMarketTest {
         element("._3wPGpzKmmn").shouldHave(text("Ноутбуки"));
         element(".LhMupC0dLR ").click();
         screenshot("C\\Users\\Ruslan\\Downloads\\aqa-code-aqa4\\aqa-code-aqa4\\web");
-        closeWebDriver();
+        closeWindow();
 
 
     }
@@ -55,7 +55,7 @@ public class YandexMarketTest {
         element(By.xpath("//h1[@class='_3wPGpzKmmn']")).shouldHave(text("Ноутбуки"));
         element(By.xpath("//div[@class='LhMupC0dLR _8oEFsr-0y5']")).click();
         screenshot("C\\Users\\Ruslan\\Downloads\\aqa-code-aqa4\\aqa-code-aqa4\\web");
-
+        closeWindow();
     }
 
 }
