@@ -1,6 +1,7 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.junit5.ScreenShooterExtension;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -24,18 +25,21 @@ public class YandexMarketTest {
     }
 
 
+
     @Test
     public void userCanSearchWithYandexMarket() {
 
         open("https://yandex.ru/");
         $(By.linkText("Маркет")).click();
         switchTo().window(1);
-        element("[id='header-search']").setValue("ноутбук xiaomi redmibook");
+        element("#header-search").setValue("ноутбук xiaomi redmibook");
         element("._1XiEJDPVpk").click();
-        element(Selectors.byText("Покупки на Маркете")).should(exist);
+        element(Selectors.byText("Маркет")).should(exist);
         element("._3wPGpzKmmn").shouldHave(text("Ноутбуки"));
         element(".LhMupC0dLR ").click();
         screenshot("C\\Users\\Ruslan\\Downloads\\aqa-code-aqa4\\aqa-code-aqa4\\web");
+        closeWebDriver();
+
 
     }
 
